@@ -29,37 +29,9 @@ const tokenAt = (text: string, pos: sourcegraph.Position): string => {
 };
 
 
-/**
-*
-*/
 
-const highlightMatchingLines = (text, token) => {
-  const dictionaryDef = processing.getDictionaryDef(token);
-  console.log ("Def: " + dictionaryDef);
 
-  const contentText = " PigLatin: " + processing.convertToPigLatin(token);
-
-  sourcegraph.app.activeWindow.visibleViewComponents[0].setDecorations(
-    null,
-    text
-      .split("\n")
-      .map((line, i) => [i, line] as [number, string])
-      .filter(([_, line]) => new RegExp("\\b" + token + "\\b").test(line))
-      .map(([i, _]) => ({
-        range: new sourcegraph.Range(
-          new sourcegraph.Position(i, 0),
-          new sourcegraph.Position(i, 0)
-        ),
-        //backgroundColor: "khaki"
-         after: {
-           contentText: contentText,
-           //linkURL: `https://www.npmjs.com/package/${pkg}`,
-           backgroundColor: "pink",
-           color: "black"
-         }
-      }))
-  );
-};
+/** Entrypoint for the Lionize Sourcegraph extension. */
 
 export function activate(): void {
   sourcegraph.workspace.onDidOpenTextDocument.subscribe(doc => {
@@ -69,7 +41,7 @@ export function activate(): void {
           const match = settings.commentRE.exec(line);
           if (match && match.length > 1) {
             const pkg = match[1];
-            return processing.fetchDownloads(pkg).pipe(
+            return processing.fetchTranslation(pkg).pipe(
               map(downloads => ({ downloads, lineNumber, pkg }))
             );
           } else {
@@ -91,7 +63,7 @@ export function activate(): void {
                 new sourcegraph.Position(lineNumber, 0)
               ),
               after: {
-                contentText: " (" + downloads + " DLs last week)",
+                contentText: " (" + downloads + ")",
                 linkURL: `https://www.npmjs.com/package/${pkg}`,
                 backgroundColor: "pink",
                 color: "black"
@@ -102,22 +74,3 @@ export function activate(): void {
       });
   });
 }
-
-
-/** Entrypoint for the Lionize Sourcegraph extension. */
-/*
-export function activate(): void {
-  sourcegraph.languages.registerHoverProvider(["*"], {
-    provideHover: (doc, pos) => {
-      const token = tokenAt(doc.text, pos);
-
-      if (token) {
-        console.log ("Token: " + token);
-        highlightMatchingLines(doc.text, token);
-      }
-
-      return null;
-    }
-  });
-}
-*/
