@@ -16,6 +16,11 @@ export const unknownString = 'no lo sé';
 
 export const apiKey = "207a9fb4-bb07-44af-9d9c-bf6bb79405ed";
 
-/** The dictionary API URL */
+/** The translation API URL */
 
-export const dictionaryURL = 'https://www.dictionaryapi.com/api/v3/references/spanish/json/'
+export const translationAPI = 'https://www.dictionaryapi.com/api/v3/references/spanish/json/';
+
+
+/** The spanish dictionary URL */
+
+export const spanishDictionaryURL = 'http://www.spanishcentral.com/translate/';
