@@ -7,7 +7,7 @@ export const commentRE = /^(\w+) /;
 
 /** When no translation is known */
 
-export const unknownString = 'no lo sé';
+export const unknownString = 'No lo sé';
 
 /** The dictionary API key */
 

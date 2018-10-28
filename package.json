@@ -1,8 +1,8 @@
 {
   "name": "sourcegraph-lionize",
   "publisher": "danielevan",
-  "title": "Sourcegraph, Lionize!",
-  "description": "Lionize '🦁' when you hover over code.",
+  "title": "Translate code comments from English to Spanish",
+  "description": "Sourcegraph extension to translates comments from English to Spanish",
   "activationEvents": [
     "*"
   ],
