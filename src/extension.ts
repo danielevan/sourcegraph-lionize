@@ -40,9 +40,9 @@ export function activate(): void {
               ),
               after: {
                 contentText: " (" + translation + ")",
-                linkURL: `https://www.npmjs.com/package/${englishWord}`,
-                backgroundColor: "pink",
-                color: "black"
+                linkURL: settings.spanishToEnglishDictionaryURL + englishWord,
+                backgroundColor: settings.translationBackgroundColor,
+                color: settings.translationColor
               }
             }))
           );

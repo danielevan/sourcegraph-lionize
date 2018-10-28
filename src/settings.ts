@@ -1,6 +1,3 @@
-/** The set of characters considered vowels */
-export const vowels = ['a', 'e', 'i', 'o', 'u'];
-
 /**
  * The regular expression that describes the body of a comment (in the future).
  * For now I'm having a devil of a time debugging regular expressions so we're keeping it simple.
@@ -23,4 +20,12 @@ export const translationAPI = 'https://www.dictionaryapi.com/api/v3/references/s
 
 /** The spanish dictionary URL */
 
-export const spanishDictionaryURL = 'http://www.spanishcentral.com/translate/';
+export const spanishToEnglishDictionaryURL = 'http://www.spanishcentral.com/translate/';
+
+/** The background color of the translation */
+
+export const translationBackgroundColor = "red";
+
+/** The text/foreground color of the translation */
+
+export const translationColor = "black";

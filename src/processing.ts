@@ -5,10 +5,10 @@ import { Observable } from "rxjs";
 import * as settings from './settings';
 
 /**
- * Looks up the given word in the translation dictionary.
+ * Looks up the given word in the translation dictionary via the API.
  *
  * @param  {string} englishWord  A word to look up
- * @return {string}              The translation, or settings.unknownString if no translation available
+ * @return {string}              The translation if known, or settings.unknownString if no translation available
  */
 
 export const fetchTranslation = (englishWord: string): Observable<number> => {
