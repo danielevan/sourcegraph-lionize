@@ -4,7 +4,7 @@
  */
 
 //export const commentWordRE = new RegExp('^ \* (\w+) ');  // Why doesn't this work?
-export const commentWordRE = /^ \* (\w+) /;
+export const commentWordRE = /^ \* (\w+) |^\/\*\* (\w+) /;
 
 /** When no translation is known */
 

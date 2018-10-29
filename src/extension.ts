@@ -21,7 +21,8 @@ export function activate(): void {
 
             // There is a match, pass it to the translation process
 
-            const englishWord = match[1];
+            const englishWord = match[1] ? match[1] : match[2];
+            console.log ("Matched word " + englishWord);
             return processing.fetchWordTranslation(englishWord).pipe(
               map(translation => ({ translation, lineNumber, englishWord }))
             );
