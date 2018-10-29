@@ -13,13 +13,22 @@ export function activate(): void {
     from(doc.text.split("\n"))
       .pipe(
         concatMap((line, lineNumber) => {
+
+          // Search for a match (as defined by settings.commentRE) in the current line
+
           const match = settings.commentRE.exec(line);
           if (match && match.length > 1) {
+
+            // There is a match, pass it to the translation process
+
             const englishWord = match[1];
             return processing.fetchTranslation(englishWord).pipe(
               map(translation => ({ translation, lineNumber, englishWord }))
             );
           } else {
+
+            // No match, return rxjs.EMPTY
+
             return EMPTY;
           }
         }),

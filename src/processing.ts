@@ -12,11 +12,14 @@ import * as settings from './settings';
  */
 
 export const fetchTranslation = (englishWord: string): Observable<number> => {
-  const url = settings.translationAPI + englishWord + "?key=" + settings.apiKey;
-  console.log ("URL: " + url);
+
+  // Build the URL that look to the API to translate the English word to Spanish
+
+  const apiURL = settings.translationAPI + englishWord + "?key=" + settings.apiKey;
+  console.log ("API URL: " + apiURL);
 
   return ajax({
-    url: url
+    url: apiURL
   }).pipe(
     map(v => {
       return v && v.response && v.response[0] && v.response[0]["shortdef"] ?

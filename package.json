@@ -2,7 +2,7 @@
   "name": "sourcegraph-lionize",
   "publisher": "danielevan",
   "title": "Translate code comments from English to Spanish",
-  "description": "Sourcegraph extension to translates comments from English to Spanish",
+  "description": "Sourcegraph extension to translate code comments from English to Spanish",
   "activationEvents": [
     "*"
   ],
