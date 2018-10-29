@@ -3,7 +3,8 @@
  * For now I'm having a devil of a time debugging regular expressions so we're keeping it simple.
  */
 
-export const commentWordRE = /^(\w+) /;
+//export const commentWordRE = new RegExp('^ \* (\w+) ');  // Why doesn't this work?
+export const commentWordRE = /^ \* (\w+) /;
 
 /** When no translation is known */
 
