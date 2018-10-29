@@ -11,9 +11,9 @@ import * as settings from './settings';
  * @return {string}              The translation if known, or settings.unknownString if no translation available
  */
 
-export const fetchTranslation = (englishWord: string): Observable<number> => {
+export const fetchWordTranslation = (englishWord: string): Observable<number> => {
 
-  // Build the URL that look to the API to translate the English word to Spanish
+  // Build the URL that looks to the API to translate the English word to Spanish
 
   const apiURL = settings.translationAPI + englishWord + "?key=" + settings.apiKey;
   console.log ("API URL: " + apiURL);
@@ -27,3 +27,13 @@ export const fetchTranslation = (englishWord: string): Observable<number> => {
     })
   );
 };
+
+/**
+ * Looks up the given word in the translation dictionary via the API.
+ *
+ * @param  {string} englishPhrase  A phrase to look up
+ * @return {string}                The translation if known, or settings.unknownString if no translation available
+ */
+
+export const fetchPhraseTranslation = (englishPhrase: string): Observable<number> => {
+}

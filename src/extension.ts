@@ -16,13 +16,13 @@ export function activate(): void {
 
           // Search for a match (as defined by settings.commentRE) in the current line
 
-          const match = settings.commentRE.exec(line);
+          const match = settings.commentWordRE.exec(line);
           if (match && match.length > 1) {
 
             // There is a match, pass it to the translation process
 
             const englishWord = match[1];
-            return processing.fetchTranslation(englishWord).pipe(
+            return processing.fetchWordTranslation(englishWord).pipe(
               map(translation => ({ translation, lineNumber, englishWord }))
             );
           } else {

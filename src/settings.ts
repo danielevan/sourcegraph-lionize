@@ -3,7 +3,7 @@
  * For now I'm having a devil of a time debugging regular expressions so we're keeping it simple.
  */
 
-export const commentRE = /^(\w+) /;
+export const commentWordRE = /^(\w+) /;
 
 /** When no translation is known */
 
