@@ -5,7 +5,7 @@
 
 //export const commentWordRE = new RegExp('^ \* (\w+) ');  // Why doesn't this work?
 //export const commentWordRE = /^ \* (\w+) |^\/\*\* (\w+) |/;
-export const commentWordRE = /^ \* (\w+) |^\/\*\* (\w+) |\/\/ (\w+)[\n\r\s]*/;
+export const commentWordRE = /^ \* (\w+)|^\/\*\* (\w+)|\/\/ (\w+)[\n\r\s]*/;
 
 /** When no translation is known */
 
@@ -15,10 +15,13 @@ export const unknownString = 'No lo sé';
 
 export const apiKey = "207a9fb4-bb07-44af-9d9c-bf6bb79405ed";
 
-/** The translation API URL */
+/** The word translation API URL */
 
-export const translationAPI = 'https://www.dictionaryapi.com/api/v3/references/spanish/json/';
+export const wordTranslationAPI = 'https://www.dictionaryapi.com/api/v3/references/spanish/json/';
 
+/** The phrase translation API Key File, located in the src/ directory */
+
+export const phraseAPIKeyFile = 'google-api-key.json';
 
 /** The spanish dictionary URL */
 

@@ -24,7 +24,7 @@ export function activate(): void {
             const englishWord = match[1] ? match[1] :
               match[2] ? match [2] :
               match[3];
-            console.log ("Matched word " + englishWord);  // Testing
+            console.log (`Matched word ${englishWord}`);  // Testing inline comment
             return processing.fetchWordTranslation(englishWord).pipe(
               map(translation => ({ translation, lineNumber, englishWord }))
             );

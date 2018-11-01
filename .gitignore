@@ -3,3 +3,6 @@
 .idea/
 node_modules/
 dist/
+yarn.lock
+yarn-error.log
+src/google-api-key.json
